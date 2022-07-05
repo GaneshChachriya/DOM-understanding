@@ -170,6 +170,22 @@ function removeItem(e){
    }
    }
 }
+// add filter
+function filterItems(e) {
+   // convert text to li
+   var text = e.target.value.toLowerCase();
+   // get lis
+   var items = itemList.getElementsByTagName('li');
+   // convert to an array 
+   Array.form(items).forEach(function(item){
+   var itemName = item.firstChild.textContent;
+   if(itemName.toLowerCase().indexOf(text) != -1){
+      item.style.display ='block';
+   } else {
+      item.style.display = 'none';
+   }
+   });
+}
 
 
 
